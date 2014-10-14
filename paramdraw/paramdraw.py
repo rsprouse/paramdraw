@@ -209,7 +209,7 @@ class ParamDrawAxes(object):
         try:
             assert(len(self.paramspec.grid_y) > 2)
             self.ax.yaxis.grid(color='gray')
-        except AttributeError, AssertionError:    # self.paramspec == None or grid_y !> 2
+        except (AttributeError, AssertionError):    # self.paramspec == None or grid_y !> 2
             self.ax.yaxis.grid(False)
         try:
             self.ax.set_ylim(self.paramspec.grid_y[0], self.paramspec.grid_y[-1])
